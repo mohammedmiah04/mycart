@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       html, body, .grid-container { height: 100%; margin: 0; }
+
+       body{
+        font-family: 'Lato', sans-serif;
+ background-color: #F7EDE2;
+       }
+
+.grid-container * { 
+
+ position: relative;
+}
+
+.grid-container *:after { 
+ top: 0;
+ left: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.6fr 2.4fr 0.3fr 2.4fr 0.5fr 2.4fr 0.3fr 2.4fr 1.6fr;
+  grid-template-rows: 1.1fr 0.4fr 1fr 1.9fr 0.1fr 2fr 0.6fr;
+  grid-template-areas: "blue-bar blue-bar blue-bar blue-bar blue-bar blue-bar blue-bar blue-bar blue-bar" "black-bar black-bar black-bar black-bar black-bar black-bar black-bar black-bar black-bar" ". . . . . . . . ." ". food1 . food2 . food3 . food4 ." ". . . . . . . . ." ". food5 . food6 . food7 . food8 ." ". . . . . . . . .";
+}
+
+.blue-bar {
+  display: grid;
+  grid-template-columns: 0.3fr 1.1fr 0.6fr 5.2fr 0.4fr 0.6fr 0.7fr 0.3fr 0.3fr;
+  grid-template-rows: 1fr 1.2fr 0.9fr;
+  grid-template-areas: ". logo . . . . . . ." ". logo . search-bar . account cart trolly ." ". logo . . . . . . .";
+  grid-area: blue-bar;
+  background-color: #C9DCEC;
+  height: 120px;
+
+}
+
+.search-bar { grid-area: search-bar; 
+background-color: white;
+height: 56px;
+top:7px;
+border-radius: 6px;
+}
+
+
+.trolly { grid-area: trolly; 
+top:09px;
+right:16px;}
+
+
+.cart { grid-area: cart; 
+top:16px;}
+
+.account { grid-area: account; 
+width:90px;
+top:16px;}
+
+
+.logo { grid-area: logo; }
+
+.black-bar { grid-area: black-bar; 
+background-color: black;}
+
+.food1 { grid-area: food1; 
+    border: 2px solid #EB68A6;
+    border-radius: 5px;
+    background-color: white;
+    height: 250px;}
+
+.food2 { grid-area: food2; 
+    border: 2px solid #EB68A6;
+    border-radius: 5px;}
+
+.food3 { grid-area: food3; 
+    border: 2px solid #EB68A6;
+    border-radius: 5px;}
+
+.food4 { grid-area: food4;
+    border: 2px solid #EB68A6; 
+    border-radius: 5px;}
+
+.food5 { grid-area: food5; 
+    border: 2px solid #EB68A6;
+    border-radius: 5px;}
+
+.food6 { grid-area: food6; 
+    border: 2px solid #EB68A6;
+    border-radius: 5px;}
+
+.food7 { grid-area: food7; border: 
+1px solid #EB68A6;
+border-radius: 5px;}
+
+
+.food8 { grid-area: food8; 
+    border: 1px solid #EB68A6;}
+
+img{
+    height: 90px;
+    width: 120px;
+    padding: 3px;
+    margin-top:19px;
+  
+}
+
+.trolly img{
+    height:22px;
+    width:22px;
+  
+}
+
+.search-bar img {
+    height:30px;
+    width:30px;
+    float: right;
+    margin-top:13px;
+    margin-right:15px;
+}
+ul{
+    text-align: center;
+    margin-right: 110px;
+}
+
+li{
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 48px;
+ }
+
+ .cart p{
+     text-align: center;
+ }
+
+ .account p{
+     float: right;
+ }
+
+ .food1 img{
+     height: 87px;
+     width: 87px;
+     text-align: center;
+     align-content: center;
+     margin-top: 9px;
+     left: 70px;
+ }
+
+ .food1 p {
+     text-align: left;
+     margin-left: 9px;
+ }
+ 
+ h1{
+     text-align: center;
+     left:580px;
+     width:200px;
+     padding-top:40px;
+     padding-bottom: 40px;d
+
+ }
+
+input{
+    width:110px;
+    height: 25px;
+    border: 1px solid grey;
+    margin:6px;
+    display: inline;
+
+}
+
+button{
+    display: inline;
+    color: white;
+    background-color: blue;
+    float: right;
+    bottom: 52px;
+    right: 7px;
+    border-radius: 7px;
+    width:70px;
+    height: 28px;
+}
+
+
+.list {
+  
+  background-color: whitesmoke;
+  height: 350px;
+  width: 300px;
+  border: 2px solid black;
+right: 0;
+  position: absolute;
+  transition: 1s all;
+  transform: scale(0) ;
+  transform-origin: 100% 0%;
+  top: 50px;
+}
+
+.trolly:hover > .list {
+  transform: scale(1);
+}
+    
+    </style>
+</head>
+<body>
+        <div class="grid-container">
+                <div class="blue-bar">
+
+                  <div class="search-bar">
+                      <img src="search.svg" alt="search">
+                  </div>
+
+                  <div class="trolly">
+                       <div class="list">
+                            some long list
+                          </div>
+                      <img src="shopping.svg" alt="trolly">
+                      
+                 
+                  </div>
+
+                  <div class="cart"><p>Cart</p></div>
+                 
+                  <div class="account"><p>My Account</p></div>
+
+                  <div class="logo">
+                        <img src="logo.png" alt="company logo">
+                       
+                    </div>
+
+                  </div>
+                 
+                <div class="black-bar">
+                    <ul>
+                        <li>Home & Garden</li>
+                        <li>Frozen Food</li>
+                        <li>Pencils</li>
+                        <li>Butter</li>
+                        <li>Toys & Games</li>
+                        <li>Groceries</li>
+                    </ul>
+                </div>
+
+                <h1>Frozen Foods</h1>
+
+                <div class="food1">
+                       <img src="food.jpg" alt="chicken">
+                       <p>Frozen Chicken Breasts</p>
+                       <p>£12.00</p>
+                       <input id='quantity' type='number' value='0'>
+                       <br>
+                       <br>
+                    <div id='box'> <span>
+                        <button onclick="calculatePrice()" type="button">Add</button>
+                    </span>
+
+                    </div>
+                </div>
+               
+                <div class="food2"></div>
+                <div class="food3"></div>
+                <div class="food4">
+                
+                </div>
+                <div class="food5"></div>
+                <div class="food6"></div>
+                <div class="food7"></div>
+                <div class="food8"></div>
+              </div>
+
+
+
+</body>
+</html>
